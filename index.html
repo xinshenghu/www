@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="jquery.js"></script>
+	</head>
+	<body>
+		<input type="button" value="11111" id="a" />
+		<div id="d" />
+
+	</body>
+	<script language="javascript">
+		$("#a").click(function() {
+
+			// $("#d").html("helloword");
+			// alert("helloword");
+
+			$.ajax({
+				type: "get",
+				// dataType: "test",
+				async: false,
+				url: "http://xinshenghu.gicp.net/api/values",
+				contentType: "text/html",
+				beforeSend: function() {},
+				success: function(data) {
+					alert(data);
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert(jqXHR.responseText);
+				}
+
+			});
+		});
+	</script>
+</html>
